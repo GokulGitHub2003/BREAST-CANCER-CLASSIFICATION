@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact us</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+     * {
+      box-sizing: border-box;
+      }
+      html, body {
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px; 
+      color: skyblue;
+      }
+      input, textarea { 
+      outline: none;
+      }
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: rgb(19, 19, 64);
+      }
+      h1 {
+      margin-top: 0;
+      font-weight: 500;
+      }
+      form {
+      position: relative;
+      width: 80%;
+      border-radius: 30px;
+      background: rgba(199, 110, 110, 0.126);
+      }
+      .form-left-decoration,
+      .form-right-decoration {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      background: #000000;
+      }
+      .form-left-decoration {
+      bottom: 60px;
+      left: -30px;
+      color: #5f24de;
+      }
+      .form-right-decoration {
+      top: 60px;
+      right: -30px;
+      color: #5f24de;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 30px;
+      background: skyblue;
+      }
+      .form-left-decoration:before {
+      top: -20px;
+      }
+      .form-left-decoration:after {
+      top: 20px;
+      left: 10px;
+      }
+      .form-right-decoration:before {
+      top: -20px;
+      right: 0;
+      }
+      .form-right-decoration:after {
+      top: 20px;
+      right: 10px;
+      }
+      .circle {
+      position: absolute;
+      bottom: 80px;
+      left: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: cyan;
+      }
+      .form-inner {
+      padding: 40px;
+      }
+      .form-inner input,
+      .form-inner textarea {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 20px;
+      background: 3#5f24de;
+      }
+      .form-inner textarea {
+      resize: none;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 20px;
+      border: none;
+      border-bottom: 4px solid #fefefe;
+      background: cadetblue; 
+      font-size: 16px;
+      font-weight: 400;
+      color: rgb(255, 255, 255);
+      }
+      button:hover {
+      background: cyan;
+      } 
+      @media (min-width: 568px) {
+      form {
+      width: 60%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="{{ url_for('predict')}}" method="post">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+        <h1 style="color: rgb(92, 150, 203);">BREAST CANCER CLASSIFICATION</h1>
+        <h5 style="color:rgb(255, 255, 255);">BY GOKULACHALAM</h5>
+        <h3>
+        <h3>perimeter_mean</h3>
+      
+        <input style="background-color: rgb(42, 141, 194);" id="first" name="perimeter_mean"  type="text">
+        <h3>concave points_mean</h3>
+        <input style="background-color: rgb(207, 135, 135);" id="second" name="concave points_mean" type="number" required="required">
+        <h3>radius_worst</h3>
+        <input style="background-color: rgb(42, 141, 194);" id="third" name="radius_worst" type = "number" required="required">
+        <h3>perimeter_worst</h3>
+        <input style="background-color: rgb(207, 135, 135);" id="fourth" name="perimeter_worst" type ="number"  required="required">
+        <h3>concave points_worst</h3>
+        <input style="background-color: rgb(42, 141, 194);" id="fourth" name="concave points_worst" type ="number"  required="required">
+        
+        
+        <button type="submit">CLASSIFY</button>
+     <br>
+
+      {{ prediction_text }}
+
+    <br>
+   </form>
+    </div> 
+  </body>
+</html>
+
+
+
+
+
+
+
+        <
+        
+
+
+ 
+
+
+
+
+        
+
+
